@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Document</title>
+    <div>
+    <p>whenyou click on the click button the count will be +1 and the shape will be change as sqare,rectancle,circle</p></head></div>
+<style>
+  p:hover{
+    background-color: olivedrab;
+
+  }
+body{
+  background-color: aqua;
+}
+
+
+#boxdiv{
+    height: 100px;
+    width: 200px;
+    background-color: rgb(11, 239, 26);
+    margin-left: 670px;
+    margin-top: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#btn-click{
+    height: 40px;
+    width: 70px;
+    margin-left: 620px;
+    background-color: bisque;
+    border: 2px solid;
+}
+#count{
+    margin-left: 670px;
+}
+#count p{
+    font-size: 20px;
+}
+#btn-reset{
+    height: 40px;
+    width: 70px;
+    background-color: bisque;
+    border: 2px solid;
+    
+}
+#clr-change1{
+    height: 40px;
+    width: 70px;
+    background-color: bisque;
+    border: 2px solid;
+}
+#clr-change2{
+    height: 40px;
+    width: 70px;
+    background-color: bisque;
+    border: 2px solid;
+}
+
+#btn-click:hover{
+    background-color: rgb(47, 255, 99);
+    color: white;
+}
+#btn-reset:hover{
+    background-color: rgb(255, 137, 137);
+    color: white;
+}
+#clr-change1:hover{
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+#clr-change2:hover{
+    background-color: rgb(0, 17, 255);
+    color: white;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+    
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+</style>
+    
+</head>
+<body>
+    <h1>Counter Game App</h1>
+    <div id="boxdiv"></div>
+    <p id="count" ></p>
+    <button id="btn-click" onclick="countIncrease()">Click</button>
+    <button id="btn-reset" onclick="reset()">Reset</button>
+    <button id="clr-change1" onclick="clrChangeRed()">Red</button>
+    <button id="clr-change2" onclick="clrChangeblue()">Blue</button>
+    
+    <script >var div=document.getElementById("boxdiv")
+var para=document.getElementById("count")
+var btn1=document.getElementById("btn-click")
+var btn2=document.getElementById("btn-reset")
+var btn3=document.getElementById("clr-change1")
+var btn4=document.getElementById("clr-change2")
+var count=0
+function countIncrease(){
+
+count++
+document.getElementById("count").style.fontSize="20px"
+document.getElementById("count").style.fontWeight="bold"
+document.getElementById("count").textContent="count:"+count
+   if(count%5==0){
+    document.getElementById("boxdiv").style.height="100px"
+    document.getElementById("boxdiv").style.width="100px"
+
+    document.getElementById("boxdiv").style.borderRadius="50px"
+   }
+   else if(count%2==0){
+    document.getElementById("boxdiv").style.height="100px"
+    document.getElementById("boxdiv").style.width="100px"
+    document.getElementById("boxdiv").style.borderRadius="0px"
+   }
+   else{
+    document.getElementById("boxdiv").style.height="100px"
+    document.getElementById("boxdiv").style.width="200px"
+    document.getElementById("boxdiv").style.borderRadius="0px"
+   }
+}
+
+function reset(){
+  count=0
+    document.getElementById("count").innerHTML="count:"+count
+    document.getElementById("boxdiv").style.backgroundColor="black"
+    document.getElementById("boxdiv").style.height="100px"
+    document.getElementById("boxdiv").style.width="200px"
+}
+
+function clrChangeRed(){
+
+    document.getElementById("boxdiv").style.backgroundColor="red"
+}
+function clrChangeblue(){
+
+    document.getElementById("boxdiv").style.backgroundColor="blue"
+}
+function toggleChange(){
+    document.body.style.backgroundColor="black"
+}
+function toggleChange1(){
+    document.body.style.backgroundColor="white"
+}</script>
+</body>
+</html>
